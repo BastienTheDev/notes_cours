@@ -1,33 +1,17 @@
-# Chapitre : Attaques Web et Risques de Dossier .git
+# Chapitre : Risques de Dossier .git
 
-## 1. Attaques Web
+## 1. Risques de Dossier .git
 
-### 1.1 Injection SQL (SQLi)
-- L'injection SQL est une technique d'attaque qui permet à un attaquant d'interagir avec une base de données en injectant du code SQL malveillant dans une entrée utilisateur.
-- Exemple :
-  - Requête SQL vulnérable : `SELECT * FROM users WHERE username = '$username'`
-  - Injection SQL : `username = 'admin' OR 1=1 --'`
-  - Résultat : La requête devient `SELECT * FROM users WHERE username = 'admin' OR 1=1 --'`, ce qui retourne toutes les lignes de la table 'users'.
-
-### 1.2 Cross-Site Scripting (XSS)
-- XSS est une vulnérabilité qui permet à un attaquant d'injecter des scripts malveillants dans des pages web consultées par d'autres utilisateurs.
-- Exemple :
-  - Script malveillant : `<script>alert('XSS Attack!')</script>`
-  - Injection XSS : En soumettant ce script dans un champ de formulaire accessible à d'autres utilisateurs.
-  - Résultat : Lorsque d'autres utilisateurs visualisent la page, le script est exécuté, affichant une boîte de dialogue avec le message 'XSS Attack!'.
-
-## 2. Risques de Dossier .git
-
-### 2.1 Présentation
+### 1.1 Présentation
 - Un dossier `.git` à la racine d'un serveur web peut contenir des informations sensibles sur le code source, l'historique des commits et les configurations du projet.
 - Exposition du contenu de ce dossier peut entraîner des fuites d'informations critiques pour les attaquants.
 
-### 2.2 Risques Potentiels
+### 1.2 Risques Potentiels
 - **Fuite de Code Source** : Exposition du code source complet du projet, y compris les secrets, les clés d'API et les informations de connexion à la base de données.
 - **Fuite d'Historique des Commits** : Révélation des modifications précédentes du code, permettant aux attaquants d'identifier les vulnérabilités et les failles corrigées.
 - **Fuite de Configurations Sensibles** : Exposition des fichiers de configuration contenant des informations sensibles telles que les paramètres de base de données ou les clés d'authentification.
 
-### 2.3 Mesures de Protection
+### 1.3 Mesures de Protection
 - **Restriction d'Accès** : Restreindre l'accès au dossier `.git` en utilisant des règles de configuration du serveur web pour empêcher l'accès direct depuis le navigateur.
 - **Suppression des Fichiers Sensibles** : Supprimer les fichiers sensibles, tels que les fichiers de configuration contenant des informations sensibles, du dépôt Git avant de le déployer sur un serveur web.
 - **Audit de Sécurité** : Effectuer régulièrement des audits de sécurité pour détecter les fuites potentielles d'informations sensibles et les corriger rapidement.
