@@ -21,5 +21,3 @@ Un outil formidable pour réaliser cette attaque est [GitDumper](https://github.
 Une fois avec le dossier .git en notre possession nous pouvons lister les commits et même voir les modification apportés par chacun d'entre eux:
 - premièrement on liste les commits avec la commande **git log** 
 - deuxièmement si on repère un commit intéressant on peut avoir plus de détail avec la commande **git show id_commit**
-
-La compréhension des risques liés aux attaques web telles que l'injection SQL et XSS, ainsi que la sensibilisation aux dangers associés à l'exposition d'un dossier `.git`, sont essentielles pour maintenir la sécurité des applications web et des infrastructures informatiques.
